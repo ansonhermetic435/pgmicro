@@ -30,10 +30,10 @@ It blends familiarity with flexibility, giving administrators and engineers a sa
 * **Validation Logic**
 
   * Simulate naming conventions and structural rules
+<img width="1922" height="1034" alt="MockAD_RHm5UT5zWA" src="https://github.com/user-attachments/assets/39741592-d22f-4f99-b822-4fcaf6937417" />
+<img width="1922" height="1034" alt="MockAD_NPEO4hzLdD" src="https://github.com/user-attachments/assets/1118c9c7-4e52-4f8f-a8a5-1eb886d2c908" />
 
-<img width="1922" height="1034" alt="image" src="https://github.com/user-attachments/assets/c3c95653-e4ef-4792-b119-b94e9b50a34c" />
 
-<img width="1922" height="1034" alt="image" src="https://github.com/user-attachments/assets/62c1b380-352e-48ea-a8b8-7f9737519d25" />
 
 ---
 
