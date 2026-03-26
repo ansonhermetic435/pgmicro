@@ -1,0 +1,331 @@
+{
+  "Name": "corp.local",
+  "Type": "Domain",
+  "Description": "",
+  "Children": [
+    {
+      "Name": "Tier 0",
+      "Type": "OU",
+      "Description": "# Tier 0 - Identity \u0026 Control Plane\r\n\r\n## What lives here:\r\n\r\n| Category        | Item                          | Description / Rule                                      |\r\n|----------------|-------------------------------|----------------------------------------------------------|\r\n| Machine        | Domain Controllers            | Core AD authentication and authorization                 |\r\n| Machine        | ADCS                          | Certificate services for identity infrastructure         |\r\n| Machine        | ADFS                          | Federation and claims-based authentication               |\r\n| Machine        | Azure AD Connect              | Syncs on-prem AD with Entra ID                           |\r\n| Machine        | Cisco DUO Proxy Servers       | MFA integration for authentication flows                 |\r\n| Machine        | Privileged Access Workstations| Hardened admin-only systems for Tier 0 access            |\r\n| Account/Group  | Domain Admins                 | Full control over domain                                 |\r\n| Account/Group  | Enterprise Admins             | Forest-wide administrative control                       |\r\n| Account/Group  | Schema Admins                 | Control over AD schema                                   |\r\n| Policy         | Tier Isolation                | Block access from lower tiers                            |\r\n| Policy         | Internet Restrictions         | No web browsing or email allowed                         |\r\n\r\n### Machines\r\n* Domain Controllers\r\n* ADCS\r\n* ADFS\r\n* Azure AD Connect\r\n* Cisco DUO Proxy Servers\r\n* Privileged Access Workstations (PAWs)\r\n    * Utilized only by assigned users\r\n\r\n### Accounts/Groups\r\n* Domain Admins\r\n* Enterprise Admins\r\n* Schema Admins\r\n\r\n### Policies\r\n* Prevent access from lower tiers\r\n* Prevent web browsing\r\n* etc.\r\n\r\n## Rules\r\n\u274C Never log into Tier 0 from lower tiers\n\r\n\u274C No internet browsing/email from Tier 0 systems\n\r\n\u2705 Only log in from hardened PAWs\n\r\n\u2705 Separate admin accounts (no dual-use)\n",
+      "Children": [
+        {
+          "Name": "Tier 0 Access Policy",
+          "Type": "GPO",
+          "Description": "",
+          "Children": []
+        },
+        {
+          "Name": "Computers",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "CORP-PAW-JD",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "CORP-PAW-JS",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            }
+          ]
+        },
+        {
+          "Name": "Groups",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "Access-T0",
+              "Type": "Group",
+              "Description": "",
+              "Children": [
+                {
+                  "Name": "jdoe0",
+                  "Type": "User",
+                  "Description": "",
+                  "Children": []
+                },
+                {
+                  "Name": "jsmith0",
+                  "Type": "User",
+                  "Description": "",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "Name": "Domain Admins",
+              "Type": "Group",
+              "Description": "",
+              "Children": [
+                {
+                  "Name": "jdoe0",
+                  "Type": "User",
+                  "Description": "",
+                  "Children": []
+                },
+                {
+                  "Name": "jsmith0",
+                  "Type": "User",
+                  "Description": "",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "Name": "Enterprise Admins",
+              "Type": "Group",
+              "Description": "",
+              "Children": [
+                {
+                  "Name": "Domain Admins",
+                  "Type": "Group",
+                  "Description": "",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "Name": "Schema Admins",
+              "Type": "Group",
+              "Description": "",
+              "Children": [
+                {
+                  "Name": "Domain Admins",
+                  "Type": "Group",
+                  "Description": "",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Name": "Servers",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "CORP-ADFS-01",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "CORP-ADFS-02",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "CORP-CA-01",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "CORP-CA-02",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "CORP-DC-01",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "CORP-DC-02",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            }
+          ]
+        },
+        {
+          "Name": "Service Accounts",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "svc-backupadmin",
+              "Type": "GMSA",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "svc-identity",
+              "Type": "GMSA",
+              "Description": "",
+              "Children": []
+            }
+          ]
+        },
+        {
+          "Name": "Users",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "jdoe0",
+              "Type": "User",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "jsmith0",
+              "Type": "User",
+              "Description": "",
+              "Children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Tier 1",
+      "Type": "OU",
+      "Description": "",
+      "Children": [
+        {
+          "Name": "Tier 1 Access Policy",
+          "Type": "GPO",
+          "Description": "",
+          "Children": []
+        },
+        {
+          "Name": "Groups",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "Access-T1",
+              "Type": "Group",
+              "Description": "",
+              "Children": [
+                {
+                  "Name": "jdoe1",
+                  "Type": "User",
+                  "Description": "",
+                  "Children": []
+                },
+                {
+                  "Name": "jsmith1",
+                  "Type": "User",
+                  "Description": "",
+                  "Children": []
+                },
+                {
+                  "Name": "mchief1",
+                  "Type": "User",
+                  "Description": "",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "Name": "Application Administrators",
+              "Type": "Group",
+              "Description": "",
+              "Children": [
+                {
+                  "Name": "mchief1",
+                  "Type": "User",
+                  "Description": "",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Name": "Servers",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "CORP-APP-01",
+              "Type": "Computer",
+              "Description": "",
+              "Children": []
+            }
+          ]
+        },
+        {
+          "Name": "Service Accounts",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "svc-ldap-app",
+              "Type": "GMSA",
+              "Description": "",
+              "Children": []
+            }
+          ]
+        },
+        {
+          "Name": "Users",
+          "Type": "OU",
+          "Description": "",
+          "Children": [
+            {
+              "Name": "jdoe1",
+              "Type": "User",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "jsmith1",
+              "Type": "User",
+              "Description": "",
+              "Children": []
+            },
+            {
+              "Name": "mchief1",
+              "Type": "User",
+              "Description": "",
+              "Children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Tier 2",
+      "Type": "OU",
+      "Description": "",
+      "Children": [
+        {
+          "Name": "Tier 2 Access Policy",
+          "Type": "GPO",
+          "Description": "",
+          "Children": []
+        },
+        {
+          "Name": "Computers",
+          "Type": "OU",
+          "Description": "",
+          "Children": []
+        },
+        {
+          "Name": "Groups",
+          "Type": "OU",
+          "Description": "",
+          "Children": []
+        },
+        {
+          "Name": "Users",
+          "Type": "OU",
+          "Description": "",
+          "Children": []
+        }
+      ]
+    }
+  ]
+}
