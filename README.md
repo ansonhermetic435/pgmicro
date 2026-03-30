@@ -30,10 +30,13 @@ It blends familiarity with flexibility, giving administrators and engineers a sa
 
   * Add rich descriptions with edit mode and switch back to read mode for markdown preview
 * **Validation Logic**
-
   * Simulate naming conventions and structural rules
-<img width="1922" height="1034" alt="MockAD_RHm5UT5zWA" src="https://github.com/user-attachments/assets/39741592-d22f-4f99-b822-4fcaf6937417" />
-<img width="1922" height="1034" alt="MockAD_NPEO4hzLdD" src="https://github.com/user-attachments/assets/1118c9c7-4e52-4f8f-a8a5-1eb886d2c908" />
+
+**UI Screenshot**
+<img width="1922" height="1034" alt="image" src="https://github.com/user-attachments/assets/36065eb0-154f-4566-8cb0-928814e81e74" />
+**Object type Counter**
+<img width="1080" height="24" alt="image" src="https://github.com/user-attachments/assets/babe680e-3f30-490b-8121-285cf09d2583" />
+
 
 * Powershell scripts are available in the repository to assist with importing current production environments into MockAD. You can look at the Wiki for more information. **Exercise caution when doing this in large environments, this will create large file sizes, and utilize large chunks of memory**
     * In testing a environment with ~20,000 users and 5,000 computers, hundreds of groups - an export from production is about ~400MB and utilizes ~1GB of memory.
